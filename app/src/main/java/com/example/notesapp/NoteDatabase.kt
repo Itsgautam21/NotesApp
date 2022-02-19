@@ -8,7 +8,6 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(entities = [Note::class], version = 3)
-
 abstract class NoteDatabase : RoomDatabase()  {
 
     // To get the NoteDao reference

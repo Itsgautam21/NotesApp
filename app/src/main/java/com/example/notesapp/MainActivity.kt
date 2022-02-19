@@ -20,12 +20,12 @@ class MainActivity : AppCompatActivity(), RVListener {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = NoteAdapter(this, this)
+        adapter = NoteAdapter( this)
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
 
         viewModel = ViewModelProvider(this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(NoteViewModel::class.java)
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application))[NoteViewModel::class.java]
         viewModel.allNotes.observe(this, { list ->
             list?.let { adapter.updateList(it) }
         })
